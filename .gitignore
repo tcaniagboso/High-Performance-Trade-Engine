@@ -1,0 +1,30 @@
+# CLion / JetBrains
+.idea/
+
+# CMake build directories
+cmake-build-*/
+build/
+
+# Compiler outputs
+*.o
+*.obj
+*.so
+*.dll
+*.dylib
+*.a
+*.lib
+*.exe
+*.out
+
+# CMake generated files
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log

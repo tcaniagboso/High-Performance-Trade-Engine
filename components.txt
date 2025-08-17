@@ -1,0 +1,57 @@
+Main Components of a Trade Engine
+
+Think of it as layers:
+
+1. Order Entry & Validation
+
+Accepts incoming requests (BUY, SELL, CANCEL, etc.).
+
+Checks if the request is valid (e.g., order size > 0, client has funds).
+
+2. Order Book
+
+The data structure that stores outstanding orders:
+
+Bid side (buyers): sorted highest → lowest.
+
+Ask side (sellers): sorted lowest → highest.
+
+Provides fast lookup for the best bid/ask.
+
+3. Matching Engine
+
+The heart of it — decides when an order can be matched.
+
+Applies rules like price–time priority:
+
+Best price first.
+
+Oldest order at that price level first.
+
+Handles partial fills, cancellations, and leftover orders.
+
+4. Trade Execution
+
+Once a match is found:
+
+Record the trade (price, size, time).
+
+Update or remove filled orders.
+
+Generate execution reports (confirmations to participants).
+
+5. Market Data Feed
+
+Publishes events:
+
+Book updates (best bid/ask, depth changes).
+
+Trade events (last price, volume).
+
+This is what external traders and market makers subscribe to.
+
+6. Risk & Compliance (later stages)
+
+Prevents overspending/shorting without collateral.
+
+Ensures regulatory compliance, fair access, and system auditability.
